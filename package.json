@@ -1,0 +1,30 @@
+{
+  "name": "zetta-camera-mock-driver",
+  "version": "0.0.1",
+  "description": "Mock Zetta camera.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "zetta",
+    "camera"
+  ],
+  "author": "Brian Mulloy <brian@landlessness.net>",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/zettajs/zetta-camera-mock-driver"
+  },
+  "bugs": {
+    "url": "https://github.com/zettajs/zetta-camera-mock-driver/issues"
+  },
+  "homepage": "https://github.com/zettajs/zetta-camera-mock-driver",
+  "dependencies": {
+    "zetta-device": "^0.18.0"
+  },
+  "directories": {
+    "example": "example"
+  },
+  "devDependencies": {}
+}
