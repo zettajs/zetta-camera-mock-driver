@@ -21,7 +21,8 @@
   },
   "homepage": "https://github.com/zettajs/zetta-camera-mock-driver",
   "dependencies": {
-    "zetta-device": "^0.18.0"
+    "zetta-device": "^0.18.0",
+    "node.extend": "^1.1.5"
   },
   "directories": {
     "example": "example"

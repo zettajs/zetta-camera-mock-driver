@@ -1,8 +1,7 @@
 var zetta = require('zetta');
 var Camera = require('../index');
-var style = require('./apps/style');
 
 zetta()
-  .use(Camera)
-  .use(style)
+  .use(Camera, 'http://www.zettaapi.org/public/demo/detroit.jpg')
+  .link('http://dev.zettaapi.org')
   .listen(1337);
