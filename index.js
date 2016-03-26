@@ -8,7 +8,10 @@ var IMAGE_EXTENSION = '.png';
 var Camera = module.exports = function(cameraImage) {
   Device.call(this);
   this.cameraImage = cameraImage;
-  this.style = {stateImage: {}};
+  this.style = {stateImage: {}, actions: [{
+        action: '_update-state-image',
+        display: 'none'
+      }]};
   if (cameraImage) {
     this.style.stateImage = {url: cameraImage, tintMode: "original"};
   } else {
