@@ -36,14 +36,14 @@ Camera.prototype.init = function(config) {
 
 Camera.prototype.makeReady = function(cb) {
   this.state = 'ready';
-  cb();
   this.call('_update-state-image');
+  cb();
 }
 
 Camera.prototype.makeNotReady = function(cb) {
   this.state = 'not-ready'
-  cb();
   this.call('_update-state-image');
+  cb();
 }
 
 Camera.prototype._updateStateImage = function(cb) {
