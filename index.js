@@ -8,14 +8,16 @@ var IMAGE_EXTENSION = '.png';
 var Camera = module.exports = function(cameraImage) {
   Device.call(this);
   this.cameraImage = cameraImage;
-  this.style = {stateImage: {}, actions: [{
+  this.style = extend(true, this.style, {properties: {}});
+  this.style.properties = {stateImage: {}, actions: [{
         action: '_update-state-image',
         display: 'none'
       }]};
+
   if (cameraImage) {
-    this.style.stateImage = {url: cameraImage, tintMode: "original"};
+    this.style.properties.stateImage = {url: cameraImage, tintMode: "original"};
   } else {
-    this.style.stateImage = {url: "http://www.zettaapi.org/icons/camera-ready.png", tintMode: "template"};
+    this.style.properties.stateImage = {url: "http://www.zettaapi.org/icons/camera-ready.png", tintMode: "template"};
   }
 };
 util.inherits(Camera, Device);
@@ -46,9 +48,9 @@ Camera.prototype.makeNotReady = function(cb) {
 
 Camera.prototype._updateStateImage = function(cb) {
   if (this.cameraImage && this.state === 'ready') {
-    this.style = extend(this.style, {stateImage: {url: this.cameraImage, tintMode: 'original'}});
+    this.style.properties = extend(true, this.style.properties, {stateImage: {url: this.cameraImage, tintMode: 'original'}});
   } else {
-    this.style = extend(this.style, {stateImage: {url: this._stateImageForCamera(), tintMode: 'template'}});
+    this.style.properties = extend(true, this.style.properties, {stateImage: {url: this._stateImageForCamera(), tintMode: 'template'}});
   }
   cb();
 }
