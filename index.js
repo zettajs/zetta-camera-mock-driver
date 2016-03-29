@@ -9,10 +9,7 @@ var Camera = module.exports = function(cameraImage) {
   Device.call(this);
   this.cameraImage = cameraImage;
   this.style = extend(true, this.style, {properties: {}});
-  this.style.properties = {stateImage: {}, actions: [{
-        action: '_update-state-image',
-        display: 'none'
-      }]};
+  this.style.actions = {'_update-state-image': {display: 'none'}};
 
   if (cameraImage) {
     this.style.properties.stateImage = {url: cameraImage, tintMode: "original"};
